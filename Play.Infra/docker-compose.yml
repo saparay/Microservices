@@ -1,0 +1,15 @@
+# docker run -d --rm --name mongoDbMicroservice -p 27017:27017 -v mongodbdata:/data/db mongo
+
+version: '3.8'
+
+services:
+  mango: 
+    image: mongo
+    container_name: mongoDbMicroservice
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodbdata:/data/db
+
+volumes:
+  mongodbdata: 
